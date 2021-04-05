@@ -16,4 +16,4 @@
 - The script will create an images folder and a videos folder and fill them with images and videos respectively. You can change how many posts it checks on each subreddit by changing limit for each subreddit in sub_list.csv.
 - A database is also maintained for all the images and videos downloaded so far. For now, the title and author name is stored for each file in "posted.csv". You can modify the script to store more items.
 - Each file downloaded has a unique ID which is used to check if the file is already present in the database. If it is, then the file is not downloaded again.
-- For fast searching, a trie made of only is  the unique IDs is used. It can be serialized and deserialized for future usage.
+- For fast searching, a trie made of only the unique IDs is used. It can be serialized and deserialized for future usage.
