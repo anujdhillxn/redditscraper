@@ -1,7 +1,7 @@
 class trieNode:
     def __init__(self):
         self.bit = {}
-        self.ends = '-'
+        self.ends = ''
 
 def insert(head,s):
     cur = head
@@ -31,7 +31,6 @@ def deserialize(data):
     root = trieNode()
     p = root
     st = []
-    ends = ""
     i = 0
     while(i<len(data)):
         if(data[i] == '<'):
@@ -42,7 +41,21 @@ def deserialize(data):
             i += 1
         else:
             p = trieNode()
-            p.ends = data[i+1]
             st[-1].bit[data[i]] = p
-            i += 2
+            if(data[i+1] == '+'):
+                p.ends = data[i+1]
+                i += 2
+            else:
+                i+= 1
+
     return root
+
+#root = trieNode()
+#f_final = open("posted.csv", "r")
+
+#for line in f_final:
+#    insert(root, line.split(',')[0])
+
+#f = open("serialized_database.txt",'a')
+#f.write(serialize(root))
+#f.close()

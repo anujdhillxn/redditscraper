@@ -88,15 +88,16 @@ for line in f_final:
 
                         cv2.imwrite(f"{image_path}{unique_id}.png", image)
 
-                        #image = cv2.imread(f"{image_path}{unique_id}.png")
-                        #resized_image = square_fit(image)
-                        #cv2.imwrite(f"{image_path}{unique_id}.png", resized_image)
+                        image = cv2.imread(f"{image_path}{unique_id}.png")
+                        resized_image = square_fit(image)
+                        cv2.imwrite(f"{image_path}{unique_id}.png", resized_image)
                         postlist.append([unique_id,sub,author,title])
                         count += 1
                         insert(root, unique_id)
             except Exception as e:
                 print(f"Image failed. {submission.url.lower()}")
                 print(e)
+                """
         if "v.redd.it" in submission.url.lower():
             try:
                 unique_id = submission.id
@@ -133,6 +134,7 @@ for line in f_final:
             except Exception as e:
                 print(f"Video failed. {submission.url.lower()}")
                 print(e)
+                """
 
 with open('posted.csv', 'a+', newline='') as file:
     writer = csv.writer(file)
