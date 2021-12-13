@@ -3,6 +3,3 @@
 /videos
 /.idea
 /utils/__pycache__
-token.pickle
-posted.csv
-serialized_database.txt
